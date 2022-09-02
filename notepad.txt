@@ -1,0 +1,8 @@
+
+- Crear una luz
+- Crear la matrix de m x n luces.
+- Cambio de estado de un elemento de la matriz.
+- Convertirdor de instrucciones en coordenadas.
+- Ejecutar una instrucción completa.
+- Contar elementos en x estado.
+- Acumular valor de acuerdo al punto #2.
