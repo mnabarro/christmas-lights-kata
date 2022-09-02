@@ -83,4 +83,16 @@ class LightMatrixTest {
         Assertions.assertThat(matrix.getValue(4,3)).isEqualTo(0);
         Assertions.assertThat(matrix.getValue(4,4)).isEqualTo(0);
     }
+
+    @Test
+    void countLightsOn() {
+
+        LightMatrix matrix = new LightMatrix(10, 10);
+
+        matrix.turnOnRange(0,0,2,4);
+        Assertions.assertThat(matrix.countLightsOn()).isEqualTo(15);
+
+        matrix.turnOnRange(5,5,6,6);
+        Assertions.assertThat(matrix.countLightsOn()).isEqualTo(19);
+    }
 }

@@ -9,10 +9,13 @@ public class LightMatrix {
     private final Integer height;
 
     public LightMatrix(Integer width, Integer height) {
+
         this.width = width;
         this.height = height;
+
         ArrayList<Light> row;
         this.matrix = new ArrayList<>();
+
         for (int i = 0; i < height; i++) {
             row = new ArrayList<>();
             for (int j = 0; j < width; j++) {
@@ -68,4 +71,16 @@ public class LightMatrix {
         }
     }
 
+    public Integer countLightsOn () {
+        int count = 0;
+
+        for (int i = 0; i < this.height; i++) {
+            for (int j = 0; j < this.width; j++) {
+                if( getValue(i, j) == 1) {
+                    count +=1;
+                }
+            }
+        }
+        return count;
+    }
 }
