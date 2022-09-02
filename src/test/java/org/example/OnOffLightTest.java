@@ -3,17 +3,17 @@ package org.example;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class LightTest {
+class OnOffLightTest {
 
     @Test
     void getValueTest() {
-        Light light = new Light();
+        OnOffLight light = new OnOffLight();
         Assertions.assertThat(light.getValue()).isEqualTo(0);
     }
 
     @Test
     void turnOnTest() {
-        Light light = new Light();
+        OnOffLight light = new OnOffLight();
 
         light.turnOn();
         Assertions.assertThat(light.getValue()).isEqualTo(1);
@@ -21,7 +21,7 @@ class LightTest {
 
     @Test
     void turnOffTest() {
-        Light light = new Light();
+        OnOffLight light = new OnOffLight();
         light.turnOn();
 
         light.turnOff();
@@ -30,7 +30,7 @@ class LightTest {
 
     @Test
     void toggleTest() {
-        Light light = new Light();
+        OnOffLight light = new OnOffLight();
 
         light.toggle();
         Assertions.assertThat(light.getValue()).isEqualTo(1);

@@ -19,7 +19,7 @@ public class LightMatrix {
         for (int i = 0; i < height; i++) {
             row = new ArrayList<>();
             for (int j = 0; j < width; j++) {
-                row.add(new Light());
+                row.add(new OnOffLight());
             }
             matrix.add(row);
         }
