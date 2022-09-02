@@ -33,10 +33,26 @@ public class LightMatrix {
 
     }
 
+    public void turnOnRange (Integer columnFrom, Integer rowFrom, Integer columnTo, Integer rowTo) {
+        for (int i = columnFrom; i < columnTo + 1; i++) {
+            for (int j = rowFrom; j < rowTo + 1; j++) {
+                turnOn(i, j);
+            }
+        }
+    }
+
     public void turnOff(Integer column, Integer row) {
 
         matrix.get(row).get(column).turnOff();
 
+    }
+
+    public void turnOffRange (Integer columnFrom, Integer rowFrom, Integer columnTo, Integer rowTo) {
+        for (int i = columnFrom; i < columnTo + 1; i++) {
+            for (int j = rowFrom; j < rowTo + 1; j++) {
+                turnOff(i, j);
+            }
+        }
     }
 
     public void toggle(Integer column, Integer row) {
@@ -44,4 +60,12 @@ public class LightMatrix {
         matrix.get(row).get(column).toggle();
 
     }
+    public void toggleRange (Integer columnFrom, Integer rowFrom, Integer columnTo, Integer rowTo) {
+        for (int i = columnFrom; i < columnTo + 1; i++) {
+            for (int j = rowFrom; j < rowTo + 1; j++) {
+                toggle(i, j);
+            }
+        }
+    }
+
 }

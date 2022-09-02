@@ -3,10 +3,6 @@ package org.example;
 public class Light {
     private Integer value = 0;
 
-    public Light() {
-
-    }
-
     public Integer getValue() {
         return this.value;
     }
