@@ -1,18 +1,21 @@
 package org.example;
 
 public class Light {
-    private Integer value;
+    private Integer value = 0;
 
-    public Light(Integer value) {
-        this.value = value;
+    public Light() {
+
     }
 
     public Integer getValue() {
         return this.value;
     }
 
-    public void setValue(Integer value) {
-        this.value = value;
+    public void turnOn() {
+        this.value = 1;
+    }
+    public void turnOff() {
+        this.value = 0;
     }
 
     public void toggle() {

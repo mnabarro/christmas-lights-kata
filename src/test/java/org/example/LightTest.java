@@ -6,22 +6,31 @@ import org.junit.jupiter.api.Test;
 class LightTest {
 
     @Test
-    void getValue() {
-        Light light = new Light(1);
+    void getValueTest() {
+        Light light = new Light();
+        Assertions.assertThat(light.getValue()).isEqualTo(0);
+    }
+
+    @Test
+    void turnOnTest() {
+        Light light = new Light();
+
+        light.turnOn();
         Assertions.assertThat(light.getValue()).isEqualTo(1);
     }
 
     @Test
-    void setValue() {
-        Light light = new Light(0);
+    void turnOffTest() {
+        Light light = new Light();
+        light.turnOn();
 
-        light.setValue(1);
-        Assertions.assertThat(light.getValue()).isEqualTo(1);
+        light.turnOff();
+        Assertions.assertThat(light.getValue()).isEqualTo(0);
     }
 
     @Test
-    void toggle() {
-        Light light = new Light(0);
+    void toggleTest() {
+        Light light = new Light();
 
         light.toggle();
         Assertions.assertThat(light.getValue()).isEqualTo(1);
