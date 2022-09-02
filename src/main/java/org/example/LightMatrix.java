@@ -3,26 +3,14 @@ package org.example;
 import java.util.ArrayList;
 
 public class LightMatrix {
-
-    private final ArrayList<ArrayList<Light>> matrix;
-    private final Integer width;
-    private final Integer height;
+    protected final ArrayList<ArrayList<Light>> matrix;
+    protected final Integer width;
+    protected final Integer height;
 
     public LightMatrix(Integer width, Integer height) {
-
+        this.matrix = new ArrayList<>();
         this.width = width;
         this.height = height;
-
-        ArrayList<Light> row;
-        this.matrix = new ArrayList<>();
-
-        for (int i = 0; i < height; i++) {
-            row = new ArrayList<>();
-            for (int j = 0; j < width; j++) {
-                row.add(new OnOffLight());
-            }
-            matrix.add(row);
-        }
     }
 
     public Integer getValue(Integer column, Integer row) {
@@ -36,7 +24,7 @@ public class LightMatrix {
 
     }
 
-    public void turnOnRange (Integer columnFrom, Integer rowFrom, Integer columnTo, Integer rowTo) {
+    public void turnOnRange(Integer columnFrom, Integer rowFrom, Integer columnTo, Integer rowTo) {
         for (int i = columnFrom; i < columnTo + 1; i++) {
             for (int j = rowFrom; j < rowTo + 1; j++) {
                 turnOn(i, j);
@@ -50,7 +38,7 @@ public class LightMatrix {
 
     }
 
-    public void turnOffRange (Integer columnFrom, Integer rowFrom, Integer columnTo, Integer rowTo) {
+    public void turnOffRange(Integer columnFrom, Integer rowFrom, Integer columnTo, Integer rowTo) {
         for (int i = columnFrom; i < columnTo + 1; i++) {
             for (int j = rowFrom; j < rowTo + 1; j++) {
                 turnOff(i, j);
@@ -63,24 +51,12 @@ public class LightMatrix {
         matrix.get(row).get(column).toggle();
 
     }
-    public void toggleRange (Integer columnFrom, Integer rowFrom, Integer columnTo, Integer rowTo) {
+
+    public void toggleRange(Integer columnFrom, Integer rowFrom, Integer columnTo, Integer rowTo) {
         for (int i = columnFrom; i < columnTo + 1; i++) {
             for (int j = rowFrom; j < rowTo + 1; j++) {
                 toggle(i, j);
             }
         }
-    }
-
-    public Integer countLightsOn () {
-        int count = 0;
-
-        for (int i = 0; i < this.height; i++) {
-            for (int j = 0; j < this.width; j++) {
-                if( getValue(i, j) == 1) {
-                    count +=1;
-                }
-            }
-        }
-        return count;
     }
 }

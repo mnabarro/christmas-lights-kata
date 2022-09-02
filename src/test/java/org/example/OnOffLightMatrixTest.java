@@ -3,11 +3,11 @@ package org.example;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class LightMatrixTest {
+class OnOffLightMatrixTest {
 
     @Test
     void getValueTest() {
-        LightMatrix matrix = new LightMatrix(10, 10);
+        OnOffLightMatrix matrix = new OnOffLightMatrix(10, 10);
         Integer value =  matrix.getValue(2,2);
 
         Assertions.assertThat(value).isEqualTo(0);
@@ -15,7 +15,7 @@ class LightMatrixTest {
     @Test
     void turnOnTest() {
 
-        LightMatrix matrix = new LightMatrix(10, 10);
+        OnOffLightMatrix matrix = new OnOffLightMatrix(10, 10);
         matrix.turnOn(2,2);
 
         Integer value =  matrix.getValue(2,2);
@@ -26,7 +26,7 @@ class LightMatrixTest {
     @Test
     void turnOffTest() {
 
-        LightMatrix matrix = new LightMatrix(10, 10);
+        OnOffLightMatrix matrix = new OnOffLightMatrix(10, 10);
         matrix.turnOn(2,2);
         matrix.turnOff(2,2);
 
@@ -38,7 +38,7 @@ class LightMatrixTest {
     @Test
     void toggleTest() {
 
-        LightMatrix matrix = new LightMatrix(10, 10);
+        OnOffLightMatrix matrix = new OnOffLightMatrix(10, 10);
         matrix.toggle(2,2);
 
         Integer value =  matrix.getValue(2,2);
@@ -49,7 +49,7 @@ class LightMatrixTest {
     @Test
     void turnOnRangeTest() {
 
-        LightMatrix matrix = new LightMatrix(10, 10);
+        OnOffLightMatrix matrix = new OnOffLightMatrix(10, 10);
         matrix.turnOnRange(3,3,4,4);
 
         Assertions.assertThat(matrix.getValue(3,3)).isEqualTo(1);
@@ -61,7 +61,7 @@ class LightMatrixTest {
     @Test
     void turnOffRangeTest() {
 
-        LightMatrix matrix = new LightMatrix(10, 10);
+        OnOffLightMatrix matrix = new OnOffLightMatrix(10, 10);
         matrix.turnOnRange(0,0,9,9);
         matrix.turnOffRange(4,0,5,1);
 
@@ -74,7 +74,7 @@ class LightMatrixTest {
     @Test
     void toggleRangeTest() {
 
-        LightMatrix matrix = new LightMatrix(10, 10);
+        OnOffLightMatrix matrix = new OnOffLightMatrix(10, 10);
         matrix.turnOnRange(0,0,4,4);
         matrix.toggleRange(3,3,4,4);
 
@@ -87,7 +87,7 @@ class LightMatrixTest {
     @Test
     void countLightsOn() {
 
-        LightMatrix matrix = new LightMatrix(10, 10);
+        OnOffLightMatrix matrix = new OnOffLightMatrix(10, 10);
 
         matrix.turnOnRange(0,0,2,4);
         Assertions.assertThat(matrix.countLightsOn()).isEqualTo(15);

@@ -3,7 +3,7 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
-        LightMatrix matrix = new LightMatrix(10,10);
+        OnOffLightMatrix matrix = new OnOffLightMatrix(10,10);
 //
         matrix.turnOnRange(0,0, 8, 8);
 //        matrix.turnOnRange(887,9, 959, 629);
