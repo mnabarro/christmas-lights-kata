@@ -7,12 +7,12 @@ public class LightMatrix {
     protected final Integer width;
     protected final Integer height;
     public interface SetLightStatus {
-        void changer(Integer column, Integer row);
+        void method(Integer column, Integer row);
     }
-    void setStatusRange(Integer colFrom, Integer rowFrom, Integer colTo, Integer rowTo, SetLightStatus status) {
+    void setStatusRange(Integer colFrom, Integer rowFrom, Integer colTo, Integer rowTo, SetLightStatus statusChanger) {
         for (int i = colFrom; i < colTo + 1; i++) {
             for (int j = rowFrom; j < rowTo + 1; j++) {
-                status.changer(i, j);
+                statusChanger.method(i, j);
             }
         }
     }
